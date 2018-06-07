@@ -1,0 +1,12 @@
+dependencies:
+- name: mysql
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 0.8.2
+- name: kube-lego
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 0.4.0
+- name: nginx-ingress
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 0.21.0
+digest: sha256:a8cbda9d6c5f78de918c6a90f553afb934cbee46b1a1d2f1742ebb87dce6120c
+generated: 2018-07-05T11:58:10.69185585+02:00
