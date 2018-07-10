@@ -4,10 +4,8 @@ apiVersion: v1
 metadata:
   name: {{template "mattermost-team-edition.fullname" .}}-data
   annotations:
-  {{- if .Values.persistence.data.storageClass }}
-    volume.beta.kubernetes.io/storage-class: {{ .Values.persistence.data.storageClass | quote }}
-  {{- else }}
-    volume.alpha.kubernetes.io/storage-class: default
+  {{- range $key, $value := .Values.persistence.data.annotations }}
+    {{ $key }}: {{ $value | quote }}
   {{- end }}
 spec:
   accessModes:
@@ -15,4 +13,11 @@ spec:
   resources:
     requests:
       storage: {{ .Values.persistence.data.size | quote }}
+{{- if .Values.persistence.data.storageClass }}
+{{- if (eq "-" .Values.persistence.data.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .Values.persistence.data.storageClass }}"
+{{- end }}
+{{- end }}
 {{- end }}
