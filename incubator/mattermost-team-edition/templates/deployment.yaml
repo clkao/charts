@@ -52,7 +52,7 @@ spec:
           - mountPath: /mattermost/config/config.json
             name: config-json
             subPath: config.json
-          - mountPath: /data
+          - mountPath: /mattermost/data
             name: mattermost-data
           resources:
 {{ toYaml .Values.resources | indent 12 }}
