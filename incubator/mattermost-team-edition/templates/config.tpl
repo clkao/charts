@@ -72,7 +72,7 @@
         "MaxNotificationsPerChannel": 1000
     },
     "SqlSettings": {
-        {{- if .Values.externalDB.enabled -}}
+        {{- if .Values.externalDB.enabled }}
         "DriverName": "{{ .Values.externalDB.externalDriverType }}",
         "DataSource": "{{ .Values.externalDB.externalConnectionString }}",
         {{- else }}
