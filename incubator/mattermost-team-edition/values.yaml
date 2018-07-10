@@ -33,6 +33,8 @@ config:
   FileBucketName:
   SMTPServer:
   SMTPPort:
+  # empty, TLS, or STARTTLS
+  SMTPConnection:
   SMTPUsername:
   SMTPPassword:
   FeedbackEmail:

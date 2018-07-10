@@ -152,7 +152,7 @@
         {{ end }}
         "SMTPServer": {{ .Values.config.SMTPServer | default "" | quote }},
         "SMTPPort": {{ .Values.config.SMTPPort | default "" | quote }},
-        "ConnectionSecurity": "",
+        "ConnectionSecurity": {{ .Values.config.SMTPConnection | default "" | quote }},
         "InviteSalt": "{{ randAlphaNum 32 }}",
         "SendPushNotifications": true,
         "PushNotificationServer": "https://push.mattermost.com",
