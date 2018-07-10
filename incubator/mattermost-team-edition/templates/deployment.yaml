@@ -56,8 +56,14 @@ spec:
             subPath: config.json
           - mountPath: /mattermost/data
             name: mattermost-data
+{{- with .Values.extraVolumeMounts }}
+{{ toYaml . | indent 12 }}
+{{- end }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
+{{- with .Values.extraContainers }}
+{{ tpl . $ | indent 8 }}
+{{- end }}
       volumes:
         - name: config-json
           configMap:
@@ -72,3 +78,6 @@ spec:
         {{- else }}
           emptyDir: {}
         {{- end }}
+{{- with .Values.extraVolumes }}
+{{ tpl . $ | indent 8 }}
+{{- end }}
