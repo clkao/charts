@@ -53,6 +53,16 @@ ingress:
     #   hosts:
     #     - mattermost.example.com
 
+auth:
+  # gitlab:
+  #   Enable: "true"
+  #   Secret: ""
+  #   Id: ""
+  #   Scope: ""
+  #   AuthEndpoint:
+  #   TokenEndpoint:
+  #   UserApiEndpoint:
+
 ## If use this please disable the mysql chart, setting the config mysql.enable to false
 externalDB:
   enabled: false

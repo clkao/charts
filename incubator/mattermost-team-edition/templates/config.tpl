@@ -189,6 +189,9 @@
         "BannerTextColor": "#333333",
         "AllowBannerDismissal": true
     },
+{{- if and .Values.auth.gitlab .Values.auth.gitlab.Enable }}
+    "GitLabSettings": {{ .Values.auth.gitlab | toJson }},
+{{- end }}
     "LocalizationSettings": {
         "DefaultServerLocale": "en",
         "DefaultClientLocale": "en",
